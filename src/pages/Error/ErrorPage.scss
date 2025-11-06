@@ -1,0 +1,24 @@
+@use '@/assets/styles/variables' as *;
+
+.error-page {
+  text-align: center;
+
+  .error-code {
+    font-size: 100px;
+    font-weight: $font-weight-bold;
+    margin: $spacing-lg 0 $spacing-md 0;
+    line-height: 1;
+  }
+
+  .error-title {
+    font-size: 28px;
+    margin: 0 0 $spacing-md 0;
+    font-weight: $font-weight-regular;
+  }
+
+  .error-message {
+    font-size: $font-size-base;
+    margin-bottom: $spacing-xl;
+    opacity: 0.9;
+  }
+}
