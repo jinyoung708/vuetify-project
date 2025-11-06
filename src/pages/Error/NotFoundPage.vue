@@ -22,5 +22,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/pages/Error/NotFoundPage.scss";
+@import "@/assets/styles/pages/Error/NotFoundPage.scss";
 </style>
