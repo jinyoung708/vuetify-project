@@ -1,8 +1,8 @@
 import { createWebHistory, createRouter } from "vue-router";
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import BlankLayout from '@/layouts/BlankLayout.vue'
-import ErrorView from '@/views/ErrorView.vue'
-import HomeView from '@/views/HomeView.vue'
+import NotFoundView from '@/views/Error/NotFoundView.vue'
+import MainView from '@/views/Main/MainView.vue'
 
 const routes = [
     {
@@ -12,7 +12,7 @@ const routes = [
             {
                 path: '',
                 name: 'HomeView',
-                component: HomeView
+                component: MainView
             },
         ]
     },
@@ -22,8 +22,8 @@ const routes = [
         children: [
             {
                 path: '',
-                name: 'ErrorView',
-                component: ErrorView
+                name: 'NotFoundView',
+                component: NotFoundView
             }
         ]
     }

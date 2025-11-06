@@ -1,18 +1,18 @@
 <template>
-  <ErrorPage />
+  <NotFoundPage />
 </template>
 
 <script>
 import { defineComponent } from "vue";
 
 // Components
-import ErrorPage from "../pages/Error/ErrorPage.vue";
+import NotFoundPage from "@/pages/Error/NotFoundPage.vue";
 
 export default defineComponent({
-  name: "ErrorView",
+  name: "NotFoundView",
 
   components: {
-    ErrorPage,
+    NotFoundPage,
   },
 });
 </script>

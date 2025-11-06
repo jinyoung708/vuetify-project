@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "ErrorPage",
+  name: "NotFoundPage",
   methods: {
     goHome() {
       this.$router.push("/");
@@ -22,5 +22,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/pages/Error/ErrorPage.scss";
+@import "@/pages/Error/NotFoundPage.scss";
 </style>
