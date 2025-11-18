@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row class="text-center">
+    <v-row>
       <v-col cols="12">
         <v-img
           :src="require('@/assets/images/svg/common/logo.svg')"
@@ -15,6 +15,26 @@
           Welcome to the Vuetify 3 Beta
         </h1>
 
+        <CustomTextField
+          density="compact"
+          placeholder="Email address"
+          prepend-inner-icon="mdi-email-outline"
+          variant="outlined"
+        />
+
+        <CustomPagination
+          v-model="page"
+          :length="15"
+          :total-visible="6"
+          styleType="rounded"
+        />
+
+        <CustomSelect
+          v-model="selected"
+          :items="['사과', '바나나', '오렌지']"
+          placeholder="과일 선택"
+        />
+
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
           <br />please join our online
@@ -27,58 +47,24 @@
       <v-col class="mb-5" cols="12">
         <h2 class="headline font-weight-bold mb-5">What's next?</h2>
 
-        <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-5">Important Links</h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-5">Ecosystem</h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-row>
+        <v-row justify="center"> </v-row>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import CustomPagination from "@/components/CustomPagination.vue";
+import CustomTextField from "@/components/CustomTextField.vue";
+import CustomSelect from "@/components/CustomSelect.vue";
+
 export default {
   name: "MainPage",
-
+  components: {
+    CustomTextField,
+    CustomPagination,
+    CustomSelect,
+  },
   data: () => ({
     ecosystem: [
       {
@@ -126,6 +112,8 @@ export default {
         href: "https://vuetifyjs.com/getting-started/frequently-asked-questions",
       },
     ],
+    page: 1,
+    selected: null,
   }),
 };
 </script>

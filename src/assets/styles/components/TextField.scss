@@ -1,0 +1,97 @@
+@use "@/assets/styles/variables" as *;
+
+.custom-text-field {
+  // 기본 공통 스타일
+  :deep(.v-field) {
+    transition: all 0.3s ease;
+  }
+  
+  :deep(.v-field__input) {
+    min-height: 48px;
+  }
+
+  :deep(.v-field--focused .v-field__outline) {
+    box-shadow: 0 0 0 3px rgba(98, 0, 234, 0.1);
+  }
+
+  // default 스타일
+  &--default {
+    :deep(.v-field) {
+      border-radius: $border-radius-lg;
+    }
+    
+    :deep(.v-field__outline) {
+      border-width: 2px;
+      border-color: #e0e0e0;
+    }
+  }
+
+  // rounded 스타일 (둥근 모서리)
+  &--rounded {
+    :deep(.v-field) {
+      border-radius: 24px;
+    }
+    
+    :deep(.v-field__input) {
+      padding: 12px 20px;
+    }
+
+    :deep(.v-field__outline__start),
+    :deep(.v-field__outline__end) {
+      border-radius: 24px;
+    }
+    
+    :deep(.v-field__outline) {
+      border-width: 2px;
+    }
+  }
+
+  // minimal 스타일 (최소한의 디자인)
+  &--minimal {
+    :deep(.v-field) {
+      border-radius: 0;
+    }
+    
+    :deep(.v-field__outline) {
+      border-width: 0 0 2px 0;
+      border-color: #e0e0e0;
+    }
+
+    :deep(.v-field--focused .v-field__outline) {
+      border-color: #6200EA;
+      box-shadow: none;
+    }
+  }
+
+  // filled 스타일 (배경색 있음)
+  &--filled {
+    :deep(.v-field) {
+      background-color: #f5f5f5;
+      border-radius: $border-radius-lg;
+    }
+    
+    :deep(.v-field__outline) {
+      border-width: 0;
+    }
+
+    :deep(.v-field--focused) {
+      background-color: #eeeeee;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // 공통 스타일
+  :deep(.v-label) {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  :deep(.v-icon) {
+    color: #757575;
+  }
+
+  :deep(input::placeholder) {
+    color: #9e9e9e;
+    opacity: 1;
+  }
+}
