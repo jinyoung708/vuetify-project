@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12">
+      <v-col cols="12" class="mb-10">
         <v-img
           :src="require('@/assets/images/svg/common/logo.svg')"
           class="my-3"
@@ -10,16 +10,13 @@
         />
       </v-col>
 
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to the Vuetify 3 Beta
-        </h1>
-
+      <v-col class="mb-10">
         <CustomTextField
           density="compact"
           placeholder="Email address"
           prepend-inner-icon="mdi-email-outline"
           variant="outlined"
+          class="mb-4"
         />
 
         <CustomPagination
@@ -27,6 +24,7 @@
           :length="15"
           :total-visible="6"
           styleType="rounded"
+          class="mb-8"
         />
 
         <CustomSelect
@@ -34,20 +32,18 @@
           :items="['사과', '바나나', '오렌지']"
           placeholder="과일 선택"
         />
-
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br />please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank"
-            >Discord Community</a
-          >
-        </p>
       </v-col>
 
       <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-5">What's next?</h2>
+        <v-row justify="center">
+          <CustomCalendar />
+        </v-row>
+      </v-col>
 
-        <v-row justify="center"> </v-row>
+      <v-col class="mb-5" cols="12">
+        <v-row justify="center">
+          <MonthlyCalendar />
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
@@ -57,6 +53,8 @@
 import CustomPagination from "@/components/CustomPagination.vue";
 import CustomTextField from "@/components/CustomTextField.vue";
 import CustomSelect from "@/components/CustomSelect.vue";
+import CustomCalendar from "@/components/CustomCalendar.vue";
+import MonthlyCalendar from "@/components/MonthlyCalendar.vue";
 
 export default {
   name: "MainPage",
@@ -64,6 +62,8 @@ export default {
     CustomTextField,
     CustomPagination,
     CustomSelect,
+    CustomCalendar,
+    MonthlyCalendar,
   },
   data: () => ({
     ecosystem: [

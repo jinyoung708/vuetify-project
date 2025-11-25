@@ -11,11 +11,11 @@ export default createVuetify({
     themes: {
       light: {
         colors: {
-          primary: '#6200EA',
-          secondary: '#03DAC6',
-          error: '#B00020',
-          success: '#00C853',
-          warning: '#FFD600',
+          // primary: '#b283f5ff',
+          // secondary: '#03DAC6',
+          // error: '#B00020',
+          // success: '#00C853',
+          // warning: '#FFD600',
         },
       },
     },
